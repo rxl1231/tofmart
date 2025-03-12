@@ -8,8 +8,13 @@
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
+    <!-- 预加载新的背景图片 -->
+    <link rel="preload" as="image" href="images/main-image.jpg">
 </head>
 <body>
+    <div class="loading-screen">
+        <div class="spinner"></div>
+    </div>
     <div class="logo-container">
         <a href="http://www.tofmart.com">
             <img src="images/logo.png" alt="TOF Mart Logo" class="logo">
@@ -19,7 +24,17 @@
         <a href="mailto:info@tofmart.com" class="email-link">info@tofmart.com</a>
     </div>
     <div class="container">
-        <img src="images/main-image.jpg" alt="TOF Mart" class="main-image">
+        <img src="images/main-image.jpg" alt="TOF Mart" class="main-image" onload="hideLoading()">
     </div>
+    <script>
+        function hideLoading() {
+            document.querySelector('.loading-screen').style.opacity = '0';
+            setTimeout(() => {
+                document.querySelector('.loading-screen').style.display = 'none';
+            }, 500);
+            // 添加 loaded 类来触发淡入效果
+            document.querySelector('.main-image').classList.add('loaded');
+        }
+    </script>
 </body>
-</html> 
+</html>
