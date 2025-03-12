@@ -8,8 +8,9 @@
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
-    <!-- 预加载新的背景图片 -->
+    <!-- 预加载两个版本的图片 -->
     <link rel="preload" as="image" href="images/main-image.jpg">
+    <link rel="preload" as="image" href="images/main-image-mobile.jpg">
 </head>
 <body>
     <div class="loading-screen">
@@ -24,7 +25,10 @@
         <a href="mailto:info@tofmart.com" class="email-link">info@tofmart.com</a>
     </div>
     <div class="container">
-        <img src="images/main-image.jpg" alt="TOF Mart" class="main-image" onload="hideLoading()">
+        <picture>
+            <source media="(max-width: 768px)" srcset="images/main-image-mobile.jpg">
+            <img src="images/main-image.jpg" alt="TOF Mart" class="main-image" onload="hideLoading()">
+        </picture>
     </div>
     <script>
         function hideLoading() {
