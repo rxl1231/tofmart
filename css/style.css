@@ -40,13 +40,13 @@ body {
 /* 添加 Logo 样式 */
 .logo-container {
     position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 1000; /* 确保 Logo 显示在最上层 */
+    top: 10px;    /* 距离顶部距离改为 10px */
+    left: 10px;   /* 距离左侧距离改为 10px */
+    z-index: 1000;
 }
 
 .logo {
-    width: 150px; /* 或您需要的尺寸 */
+    width: 80px;  /* Logo 宽度改为 80px */
     height: auto;
     display: block;
 }
@@ -62,7 +62,7 @@ body {
     }
 
     .logo {
-        width: 100px; /* 在移动设备上显示更小的 Logo */
+        width: 60px;
     }
 }
 
