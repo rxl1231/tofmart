@@ -37,6 +37,20 @@ body {
     object-position: center;
 }
 
+/* 添加 Logo 样式 */
+.logo-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000; /* 确保 Logo 显示在最上层 */
+}
+
+.logo {
+    width: 150px; /* 或您需要的尺寸 */
+    height: auto;
+    display: block;
+}
+
 /* 移动设备适配 */
 @media screen and (max-width: 768px) {
     .container {
@@ -45,6 +59,10 @@ body {
 
     .main-image {
         object-position: center center; /* 确保图片在移动设备上居中显示 */
+    }
+
+    .logo {
+        width: 100px; /* 在移动设备上显示更小的 Logo */
     }
 }
 
