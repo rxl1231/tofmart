@@ -40,15 +40,41 @@ body {
 /* 添加 Logo 样式 */
 .logo-container {
     position: fixed;
-    top: 10px;    /* 距离顶部距离改为 10px */
-    left: 10px;   /* 距离左侧距离改为 10px */
+    top: 20px;
+    left: 20px;
     z-index: 1000;
 }
 
 .logo {
-    width: 80px;  /* Logo 宽度改为 80px */
+    width: 100px;  /* Logo 尺寸调大 */
     height: auto;
     display: block;
+    transition: transform 0.3s ease; /* 添加悬停效果 */
+}
+
+.logo:hover {
+    transform: scale(1.05); /* 悬停时略微放大 */
+}
+
+.email-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.email-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.email-link:hover {
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 /* 移动设备适配 */
@@ -62,7 +88,11 @@ body {
     }
 
     .logo {
-        width: 60px;
+        width: 80px;
+    }
+    
+    .email-link {
+        font-size: 14px;
     }
 }
 
